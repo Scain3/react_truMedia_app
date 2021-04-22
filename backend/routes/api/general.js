@@ -1,12 +1,8 @@
-// import axios from 'axios';
-// import { Cookies } from 'react-cookie';
-// import router from './session';
-
 const express = require('express');
 const asyncHandler = require('express-async-handler');
 const router = express.Router();
 const axios = require('axios');
-// const { Cookies } = require('react-cookie');
+const { Cookies } = require('react-cookies');
 
 
 router.get('/', asyncHandler(async(req, res) => {
@@ -17,7 +13,7 @@ router.get('/', asyncHandler(async(req, res) => {
                 'apiKey':  `${process.env.API_KEY}`
             }
         }).then(res => res.data);
-        new Cookies().set('holderToken', data.token, {expires: new Date(data.expires)});
+        new Cookies().set('tempToken', data.token, {expires: new Date(data.expires)});
     } catch(e){
         console.error(e)
         error = `An error occurred that reads "${e.message}". Check the console for more details.`;
@@ -27,7 +23,7 @@ router.get('/', asyncHandler(async(req, res) => {
     })
 }))
 
-router.get('/athletes')
+
 
 // const getToken = async() => {
 //     try {
