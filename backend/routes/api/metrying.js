@@ -16,7 +16,9 @@ router.get('/', asyncHandler(async(req, res) => {
             }
         }))
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then((data) => {
+            return data
+        })
 
         // const playerData = fetch('https://project.trumedianetworks.com/api/mlb/players', {
         //     headers: {
@@ -26,7 +28,7 @@ router.get('/', asyncHandler(async(req, res) => {
         // .then(res => res.json())
         // .then(data => console.log(data))
 
-        res.json({
+        return res.json({
             data
         })
 }))
