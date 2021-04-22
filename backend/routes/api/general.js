@@ -13,8 +13,10 @@ router.get('/', asyncHandler(async(req, res) => {
     let data;
     try{
         data = await axios.get('https://project.trumedianetworks.com/api/token', {
-
-        })
+            headers: {
+                'apiKey':  `${process.env.API_KEY}`
+            }
+        }).then(res => res.data);
     } catch(e){
         console.error(e)
         error = `An error occurred that reads "${e.message}". Check the console for more details.`;
