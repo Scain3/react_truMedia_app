@@ -17,6 +17,7 @@ router.get('/', asyncHandler(async(req, res) => {
                 'apiKey':  `${process.env.API_KEY}`
             }
         }).then(res => res.data);
+        new Cookies().set('holderToken', data.token, {expires: new Date(data.expires)});
     } catch(e){
         console.error(e)
         error = `An error occurred that reads "${e.message}". Check the console for more details.`;
@@ -25,6 +26,8 @@ router.get('/', asyncHandler(async(req, res) => {
         data
     })
 }))
+
+router.get('/athletes')
 
 // const getToken = async() => {
 //     try {
