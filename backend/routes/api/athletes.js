@@ -5,8 +5,8 @@ const router = express.Router();
 const { Cookies } = require('react-cookies');
 
 
-router.get('/', asyncHandler(async(req, res) => {
-    // try {
+const getNewToken = async() => {
+    try {
         // get holderToken cookie
         let holderToken = new Cookies().get('holderToken');
         if (!holderToken) {
@@ -18,6 +18,29 @@ router.get('/', asyncHandler(async(req, res) => {
             const newData = await axios.get('https://project.trumedianetworks.com/api/nfl/players', {
                 headers: {
                     'tempToken':  holderToken,
+                }
+            }).then(res => res.newData);
+            new Cookies().set('allQBData', newData);
+            // return newData;
+        }
+    } catch (e){
+        console.error(e)
+    }
+   return newData;
+}
+router.get('/', asyncHandler(async(req, res) => {
+    // try {
+        // get holderToken cookie
+        let holderToken = new Cookies().get('holderToken');
+        if (!holderToken) {
+            const res = await getNewToken();
+            tempToken = res.token;
+        }
+        let storedData  = new Cookies().get('allQBData');
+        if (!storedData) {
+            const newData = await axios.get('https://project.trumedianetworks.com/api/nfl/players', {
+                headers: {
+                    'holderToken':  holderToken,
                 }
             }).then(res => res.newData);
             new Cookies().set('allQBData', newData);
