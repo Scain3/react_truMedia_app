@@ -1,0 +1,15 @@
+.all-players-div{
+    display: flex;
+    flex-direction: column;
+}
+
+.player-block-data{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.player-data{
+    text-align: center;
+}

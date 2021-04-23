@@ -14,14 +14,14 @@ function Athletes(){
     }, [dispatch])
 
     return(
-        <div>
+        <div className="all-players-div">
             {allPlayers && allPlayers.map((player, index = 0) => (
-                <div className="player-block-data">
-                    <div>{index += 1 }</div>
-                    <div><img src={player.playerImage} alt={player.fullName} /></div>
-                    <div>{player.fullName}</div>
-                    <div>{player.playerId}</div>
-                    <div><img src={player.teamImage} alt={`${player.fullName}'s Team`} /></div>
+                <div className="player-block-data" onClick={()=>history.push(`player/${player.fullName}`)}>
+                    <div className="player-data">{index += 1 }</div>
+                    <div className="player-data"><img src={player.playerImage} alt={player.fullName} /></div>
+                    <div className="player-data">{player.fullName}</div>
+                    <div className="player-data">{player.playerId}</div>
+                    <div className="player-data"><img src={player.teamImage} alt={`${player.fullName}'s Team`} /></div>
                 </div>
             ))}
         </div>
