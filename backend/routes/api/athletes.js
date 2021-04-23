@@ -38,7 +38,7 @@ router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
             }
         })
         .then(res => res.json())
-    //Use token and req.params to access the id to match player to the id
+    //Use token and req.params to access the id to match player to the id and retrieve the matched player data
         .then(data => fetch(`https://project.trumedianetworks.com/api/mlb/player/${req.params.id}`, {
             headers: {
                 'temptoken': data.token
