@@ -1,57 +1,58 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
+const fetch = require('node-fetch');
 const router = express.Router();
-// const general = require('./general');
-const { Cookies } = require('react-cookies');
 
 
-const getNewToken = async() => {
-    try {
-        // get holderToken cookie
-        let holderToken = new Cookies().get('holderToken');
-        if (!holderToken) {
-            const res = await data;
-            tempToken = res.data.token;
-        }
-        let storedData  = new Cookies().get('allQBData');
-        if (!storedData) {
-            const newData = await axios.get('https://project.trumedianetworks.com/api/nfl/players', {
-                headers: {
-                    'tempToken':  holderToken,
-                }
-            }).then(res => res.newData);
-            new Cookies().set('allQBData', newData);
-            // return newData;
-        }
-    } catch (e){
-        console.error(e)
-    }
-   return newData;
-}
+//Get All MLB Player Data
 router.get('/', asyncHandler(async(req, res) => {
-    // try {
-        // get holderToken cookie
-        let holderToken = new Cookies().get('holderToken');
-        if (!holderToken) {
-            const res = await getNewToken();
-            tempToken = res.token;
+    //Get the token
+    const data = await fetch('https://project.trumedianetworks.com/api/token', {
+        headers: {
+            'apiKey': `${process.env.API_KEY}`
         }
-        let storedData  = new Cookies().get('allQBData');
-        if (!storedData) {
-            const newData = await axios.get('https://project.trumedianetworks.com/api/nfl/players', {
-                headers: {
-                    'holderToken':  holderToken,
-                }
-            }).then(res => res.newData);
-            new Cookies().set('allQBData', newData);
-            // return newData;
-        }
-    // } catch (e){
-    //     console.error(e)
-    // }
+    })
+        .then(res => res.json())
+        //Get all of the players data by using temptoken
+        .then(data => fetch('https://project.trumedianetworks.com/api/mlb/players', {
+            headers: {
+                'temptoken': data.token
+            }
+        }))
+        .then(res => res.json())
+        .then((data) => {
+            return data
+        })
+
+        return res.json({
+            data
+        })
+}))
+
+//Get each players data by using the playerId
+router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
+    //Get the token
+        const data = await fetch('https://project.trumedianetworks.com/api/token', {
+            headers: {
+                'apiKey': `${process.env.API_KEY}`
+            }
+        })
+        .then(res => res.json())
+    //Use token and req.params to access the id to match player to the id
+        .then(data => fetch(`https://project.trumedianetworks.com/api/mlb/player/${req.params.id}`, {
+            headers: {
+                'temptoken': data.token
+            }
+        }))
+        .then(res => res.json())
+        .then((data) => {
+            return data
+        })
+
     return res.json({
-        newData
+        data
     })
 }))
+
 
 module.exports = router;
