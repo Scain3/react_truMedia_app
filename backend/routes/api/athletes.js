@@ -24,9 +24,9 @@ router.get('/', asyncHandler(async(req, res) => {
             return data
         })
 
-        return res.json({
+        return res.json(
             data
-        })
+        )
 }))
 
 //Get each players data by using the playerId
