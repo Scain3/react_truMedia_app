@@ -10,5 +10,5 @@ const getPlayers = (players) => {
 }
 
 export const fetchAllPlayers = () => async(dispatch) => {
-    const response = await fetch(``)
+    const response = await fetch(`api/meTrying/`)
 }
