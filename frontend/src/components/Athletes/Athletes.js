@@ -6,7 +6,7 @@ import './Athletes.css';
 
 function Athletes(){
     const history = useHistory();
-    const allPlayers = useSelector(state => state.athletes);
+    const allPlayers = useSelector(state => Object.values(state.athletes));
     const dispatch = useDispatch();
 
     useEffect(()=> {
@@ -14,7 +14,17 @@ function Athletes(){
     }, [dispatch])
 
     return(
-        <h1>Hello World</h1>
+        <div>
+            {allPlayers && allPlayers.map((player, index = 0) => (
+                <div className="player-block-data">
+                    <div>{index += 1 }</div>
+                    <div><img src={player.playerImage} alt={player.fullName} /></div>
+                    <div>{player.fullName}</div>
+                    <div>{player.playerId}</div>
+                    <div><img src={player.teamImage} alt={`${player.fullName}'s Team`} /></div>
+                </div>
+            ))}
+        </div>
     )
 
 }
