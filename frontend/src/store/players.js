@@ -18,7 +18,7 @@ export const fetchAllPlayers = () => async(dispatch) => {
 
 const initialState = {};
 
-const athleteRouter = (state=initialState, action) => {
+const athleteReducer = (state=initialState, action) => {
     switch(action.type){
         case GET_PLAYERS:
            const allPlayers = {};
@@ -30,3 +30,5 @@ const athleteRouter = (state=initialState, action) => {
             return state;
     }
 }
+
+export default athleteReducer

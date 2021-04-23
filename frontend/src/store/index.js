@@ -1,9 +1,12 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import session from './session'
+import athleteReducer from './athlete';
 
 const rootReducer = combineReducers({
-  session
+  session,
+  athletes: athleteReducer
+
 });
 
 let enhancer;
