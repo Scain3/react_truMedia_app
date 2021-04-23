@@ -49,9 +49,9 @@ router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
             return data
         })
 
-    return res.json({
-        data
-    })
+    return res.json(
+        data[0]
+    )
 }))
 
 
