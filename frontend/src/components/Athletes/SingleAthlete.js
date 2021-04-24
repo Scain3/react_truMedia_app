@@ -9,7 +9,7 @@ function SingleAthlete(){
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchOnePlayer(IDBIndex));
+        dispatch(fetchOnePlayer(id));
     }, [id, dispatch])
 
     return(
