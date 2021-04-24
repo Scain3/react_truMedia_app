@@ -50,4 +50,4 @@ const athleteReducer = (state=initialState, action) => {
     }
 }
 
-export default athleteReducer
+export default athleteReducer;

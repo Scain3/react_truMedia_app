@@ -6,6 +6,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Athletes from "./components/Athletes/Athletes";
+import SingleAthlete from "./components/Athletes/SingleAthlete";
 
 function App() {
   const dispatch = useDispatch();
@@ -27,6 +28,9 @@ function App() {
           </Route>
           <Route path="/athletes">
             <Athletes />
+          </Route>
+          <Route path="/player/:id">
+            <SingleAthlete />
           </Route>
         </Switch>
       )}
