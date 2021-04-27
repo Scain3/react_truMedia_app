@@ -48,7 +48,7 @@ router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
     .then((data) => {
         return data
     })
-
+    // console.log(eachPlayer);
     return res.json(
         eachPlayer[0]
     )

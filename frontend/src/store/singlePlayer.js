@@ -14,7 +14,8 @@ const getOnePlayer = (player) => {
 
 //THUNK ACTION FOR GETTING ONE PLAYER
 export const fetchOnePlayer = (id) => async(dispatch) => {
-    const response = await fetch(`api/athletes/${id}`);
+    const response = await fetch(`/api/athletes/${id}`);
+    // console.log('response', response);
     dispatch(getOnePlayer(response.data.eachPlayer))
 }
 
@@ -35,14 +36,14 @@ const initialState = {
     "K": 0,
     "HBP": 0,
     "SF": 0,
-    "TB": 1,
+    "TB": 0,
     "RBI": 0
 };
 
 const playerReducer = (state=initialState, action) => {
     switch(action.type){
         case GET_ONE_PLAYER:
-            return{...state};
+            return{...state, ...action.payload};
         default:
             return state;
     }
