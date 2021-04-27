@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
-import {fetchOnePlayer} from '../../store/singlePlayer';
+import {fetchOnePlayer} from '../../store/players';
 
 function SingleAthlete(){
-    const singlePlayer = useSelector(state => state.player);
+    const singlePlayer = useSelector(state => state.athletes);
     const {id} = useParams();
     console.log('id', id);
     console.log('singlePlayer', singlePlayer);
@@ -14,9 +14,9 @@ function SingleAthlete(){
     // const thisPlayer = singlePlayer[playerId]
 
     useEffect(() => {
-        if(singlePlayer[id]) return
+        // if(singlePlayer && singlePlayer[id]) return
         dispatch(fetchOnePlayer(id));
-    }, [id, dispatch, singlePlayer])
+    }, [id, dispatch])
 
     // useEffect(()=> {
     //     if(singlePlayer[playerId]) setLoaded(true);

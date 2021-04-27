@@ -16,28 +16,28 @@ const getOnePlayer = (player) => {
 export const fetchOnePlayer = (id) => async(dispatch) => {
     const response = await fetch(`/api/athletes/${id}`);
     // console.log('response', response);
-    dispatch(getOnePlayer(response.data.eachPlayer))
+    dispatch(getOnePlayer(response.data))
 }
 
 const initialState = {
-    "playerId": 0,
-    "fullName": "",
-    "playerImage": "",
-    "gameDate": "",
-    "team": "",
-    "teamImage": "",
-    "opponent": "",
-    "opponentImage": "",
-    "PA": 0,
-    "AB": 0,
-    "H": 0,
-    "HR": 0,
-    "BB": 0,
-    "K": 0,
-    "HBP": 0,
-    "SF": 0,
-    "TB": 0,
-    "RBI": 0
+    // "playerId": 0,
+    // "fullName": "",
+    // "playerImage": "",
+    // "gameDate": "",
+    // "team": "",
+    // "teamImage": "",
+    // "opponent": "",
+    // "opponentImage": "",
+    // "PA": 0,
+    // "AB": 0,
+    // "H": 0,
+    // "HR": 0,
+    // "BB": 0,
+    // "K": 0,
+    // "HBP": 0,
+    // "SF": 0,
+    // "TB": 0,
+    // "RBI": 0
 };
 
 const playerReducer = (state=initialState, action) => {
