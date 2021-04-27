@@ -13,6 +13,7 @@ function Athletes(){
         dispatch(fetchAllPlayers());
     }, [dispatch])
 
+
     return(
         <div className="all-players-div">
             {allPlayers && allPlayers.map((player, index = 0) => (

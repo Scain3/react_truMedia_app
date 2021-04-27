@@ -15,15 +15,34 @@ const getOnePlayer = (player) => {
 //THUNK ACTION FOR GETTING ONE PLAYER
 export const fetchOnePlayer = (id) => async(dispatch) => {
     const response = await fetch(`api/athletes/${id}`);
-    dispatch(getOnePlayer(response.data))
+    dispatch(getOnePlayer(response.data.eachPlayer))
 }
 
-const initialState = {};
+const initialState = {
+    "playerId": 0,
+    "fullName": "",
+    "playerImage": "",
+    "gameDate": "",
+    "team": "",
+    "teamImage": "",
+    "opponent": "",
+    "opponentImage": "",
+    "PA": 0,
+    "AB": 0,
+    "H": 0,
+    "HR": 0,
+    "BB": 0,
+    "K": 0,
+    "HBP": 0,
+    "SF": 0,
+    "TB": 1,
+    "RBI": 0
+};
 
 const playerReducer = (state=initialState, action) => {
     switch(action.type){
         case GET_ONE_PLAYER:
-            return{...state, [action.payload.id]: action.payload};
+            return{...state};
         default:
             return state;
     }

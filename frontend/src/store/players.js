@@ -44,7 +44,7 @@ const athleteReducer = (state=initialState, action) => {
            })
            return allPlayers;
         case GET_ONE_PLAYER:
-            return{...state, [action.payload.id]: action.payload};
+            return{...state};
         default:
             return state;
     }
