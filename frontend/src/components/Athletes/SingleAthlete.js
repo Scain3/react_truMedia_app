@@ -14,7 +14,6 @@ function SingleAthlete(){
 
     return(
         <div>
-            <h1>Hello World</h1>
             <div>{singlePlayer.playerId}</div>
             <div>{singlePlayer.fullName}</div>
             <div><img src={singlePlayer.playerImage} alt={singlePlayer.fullName} /></div>
