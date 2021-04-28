@@ -14,7 +14,7 @@ router.get('/', asyncHandler(async(req, res) => {
     })
         .then(res => res.json())
         //Get all of the players data by using temptoken
-        .then(data => fetch('https://project.trumedianetworks.com/api/mlb/players', {
+        .then(data => fetch('https://project.trumedianetworks.com/api/nfl/players', {
             headers: {
                 'temptoken': data.token
             }
@@ -39,7 +39,7 @@ router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
     })
     .then(res => res.json())
 //Use token and req.params to access the id to match player to the id and retrieve the matched player data
-    .then(data => fetch(`https://project.trumedianetworks.com/api/mlb/player/${req.params.id}`, {
+    .then(data => fetch(`https://project.trumedianetworks.com/api/nfl/player/${req.params.id}`, {
         headers: {
             'temptoken': data.token
         }
