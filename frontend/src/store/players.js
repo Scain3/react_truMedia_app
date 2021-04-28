@@ -41,16 +41,16 @@ const initialState = {
     "teamImage": "",
     "opponent": "",
     "opponentImage": "",
-    "PA": 0,
-    "AB": 0,
-    "H": 0,
-    "HR": 0,
-    "BB": 0,
-    "K": 0,
+    "Att": 0,
+    "Cmp": 0,
+    "Sack": 0,
+    "Int": 0,
+    "PsYds": 0,
+    "PsTD": 0,
     "HBP": 0,
-    "SF": 0,
-    "TB": 0,
-    "RBI": 0
+    "Rush": 0,
+    "RshYds": 0,
+    "RshTD": 0
 };
 
 const athleteReducer = (state=initialState, action) => {
