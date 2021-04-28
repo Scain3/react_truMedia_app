@@ -6,33 +6,33 @@ import {fetchOnePlayer} from '../../store/players';
 function SingleAthlete(){
     const singlePlayer = useSelector(state => state.athletes);
     const {id} = useParams();
-    console.log('id', id);
-    console.log('singlePlayer', singlePlayer);
-    // console.log(singlePlayer[0]);
     const dispatch = useDispatch();
-    // const [loaded, setLoaded] = useState(false);
-    // const thisPlayer = singlePlayer[playerId]
 
     useEffect(() => {
-        // if(singlePlayer && singlePlayer[id]) return
         dispatch(fetchOnePlayer(id));
     }, [id, dispatch])
 
-    // useEffect(()=> {
-    //     if(singlePlayer[playerId]) setLoaded(true);
-    // }, [singlePlayer])
-
-    // if(!loaded) return null;
     return(
         <div>
             <h1>Hello World</h1>
             <div>{singlePlayer.playerId}</div>
-            {/* <div>{console.log(fetchOnePlayer(id), id)}</div> */}
             <div>{singlePlayer.fullName}</div>
             <div><img src={singlePlayer.playerImage} alt={singlePlayer.fullName} /></div>
-            <div>{singlePlayer.gameDate}</div>
+            <div>{singlePlayer.seasonYear}</div>
+            <div>{singlePlayer.week}</div>
             <div>{singlePlayer.team}</div>
-            <div><img src={singlePlayer.teamImage} /></div>
+            <div><img src={singlePlayer.teamImage} alt={singlePlayer.team} /></div>
+            <div>{singlePlayer.opponent}</div>
+            <div><img src={singlePlayer.opponentImage} alt={singlePlayer.opponent} /></div>
+            <div>{singlePlayer.Att}</div>
+            <div>{singlePlayer.Cmp}</div>
+            <div>{singlePlayer.Sack}</div>
+            <div>{singlePlayer.Int}</div>
+            <div>{singlePlayer.PsYds}</div>
+            <div>{singlePlayer.PsTd}</div>
+            <div>{singlePlayer.Rush}</div>
+            <div>{singlePlayer.RshYds}</div>
+            <div>{singlePlayer.RshTD}</div>
         </div>
     )
 }

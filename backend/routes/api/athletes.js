@@ -4,7 +4,7 @@ const fetch = require('node-fetch');
 const router = express.Router();
 
 
-//Get All MLB Player Data
+//Get All NFL Player Data
 router.get('/', asyncHandler(async(req, res) => {
     //Get the token
     const allPlayers = await fetch('https://project.trumedianetworks.com/api/token', {
