@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import {fetchOnePlayer} from '../../store/players';
+import './Athletes.css';
 
 function SingleAthlete(){
     const singlePlayer = useSelector(state => state.athletes);
@@ -36,24 +37,27 @@ function SingleAthlete(){
                 <div>{}</div>
             </div> */}
             <div>
-                <div><div>{"ID"}</div>{singlePlayer.playerId}</div>
-                <div><div>{"Player"}</div>{singlePlayer.fullName}</div>
-                <div><div>{"Head Shot"}</div><img src={singlePlayer.playerImage} alt={singlePlayer.fullName} /></div>
-                <div><div>{"Season Year"}</div>{singlePlayer.seasonYear}</div>
-                <div><div>{"Week"}</div>{singlePlayer.week}</div>
-                <div><div>{"Team"}</div>{singlePlayer.team}</div>
-                <div><div>{"Team Image"}</div><img src={singlePlayer.teamImage} alt={singlePlayer.team} /></div>
-                <div><div>{"Opponent"}</div>{singlePlayer.opponent}</div>
-                <div><img src={singlePlayer.opponentImage} alt={singlePlayer.opponent} /></div>
-                <div>{singlePlayer.Att}</div>
-                <div>{singlePlayer.Cmp}</div>
-                <div>{singlePlayer.Sack}</div>
-                <div>{singlePlayer.Int}</div>
-                <div>{singlePlayer.PsYds}</div>
-                <div>{singlePlayer.PsTd}</div>
-                <div>{singlePlayer.Rush}</div>
-                <div>{singlePlayer.RshYds}</div>
-                <div>{singlePlayer.RshTD}</div>
+                <div><span className="single-athlete__label">{"ID"}</span>{singlePlayer.playerId}</div>
+                <div><span className="single-athlete__label">{"Player"}</span>{singlePlayer.fullName}</div>
+                <div><span className="single-athlete__label">{"Head Shot"}</span><img src={singlePlayer.playerImage} alt={singlePlayer.fullName} /></div>
+                <div><span className="single-athlete__label">{"Season Year"}</span>{singlePlayer.seasonYear}</div>
+                <div><span className="single-athlete__label">{"Week"}</span>{singlePlayer.week}</div>
+                <div><span className="single-athlete__label">{"Team"}</span>{singlePlayer.team}</div>
+                <div><span className="single-athlete__label">{"Team Image"}</span><img src={singlePlayer.teamImage} alt={singlePlayer.team} /></div>
+                <div>
+                    <div className="single-athlete__label">{"Opponent"}</div>
+                    <img src={singlePlayer.opponentImage} alt={singlePlayer.opponent} />
+                    {singlePlayer.opponent}</div>
+                {/* <div><img src={singlePlayer.opponentImage} alt={singlePlayer.opponent} /></div> */}
+                <div><div className="single-athlete__label">{"Att"}</div>{singlePlayer.Att}</div>
+                <div><div className="single-athlete__label">{"Cmp"}</div>{singlePlayer.Cmp}</div>
+                <div><div className="single-athlete__label">{"Sack"}</div>{singlePlayer.Sack}</div>
+                <div><div className="single-athlete__label">{"Int"}</div>{singlePlayer.Int}</div>
+                <div><div className="single-athlete__label">{"PsYds"}</div>{singlePlayer.PsYds}</div>
+                <div><div className="single-athlete__label">{"PsTd"}</div>{singlePlayer.PsTd}</div>
+                <div><div className="single-athlete__label">{"Rush"}</div>{singlePlayer.Rush}</div>
+                <div><div className="single-athlete__label">{"RshYds"}</div>{singlePlayer.RshYds}</div>
+                <div><div className="single-athlete__label">{"RshTD"}</div>{singlePlayer.RshTD}</div>
             </div>
         </div>
     )
