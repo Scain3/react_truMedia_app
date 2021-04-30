@@ -66,8 +66,19 @@ body{
     justify-content: center;
 }
 
-.single-athlete-pg-description{
+.single-athlete__full-name{
+    text-align: center;
+}
+
+.single-athlete__photo-div{
     margin: 0 auto;
+}
+
+.single-athlete-pg-description{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .single-athlete-pg-data{

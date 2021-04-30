@@ -16,8 +16,8 @@ function SingleAthlete(){
     return(
         <div className="single-athlete-pg-div">
             <div className="single-athlete-pg-description">
-                <h1>{singlePlayer.fullName}</h1>
-                <img src={singlePlayer.playerImage} alt={singlePlayer.fullName} />
+                <h1 className="single-athlete__full-name">{singlePlayer.fullName}</h1>
+                <div className="single-athlete__photo-div"><img src={singlePlayer.playerImage} alt={singlePlayer.fullName} /></div>
                 <table>
                     <tr>
                         <th>Season Year</th>
@@ -31,11 +31,11 @@ function SingleAthlete(){
                         <td>{singlePlayer.week}</td>
                         <td>{singlePlayer.gameDate}</td>
                         <td>
-                            <div>{singlePlayer.team}</div>
+                            {/* <div>{singlePlayer.team}</div> */}
                             <div><img src={singlePlayer.teamImage} alt={singlePlayer.team} /></div>
                         </td>
                         <td>
-                            <div>{singlePlayer.opponent}</div>
+                            {/* <div>{singlePlayer.opponent}</div> */}
                             <div><img src={singlePlayer.opponentImage} alt={singlePlayer.opponent} /></div>
                         </td>
                     </tr>
