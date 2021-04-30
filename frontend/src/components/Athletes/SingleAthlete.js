@@ -15,11 +15,34 @@ function SingleAthlete(){
 
     return(
         <div className="single-athlete-pg-div">
-            <div>
+            <div className="single-athlete-pg-description">
                 <h1>{singlePlayer.fullName}</h1>
                 <img src={singlePlayer.playerImage} alt={singlePlayer.fullName} />
+                <table>
+                    <tr>
+                        <th>Season Year</th>
+                        <th>Week</th>
+                        <th>Game Date</th>
+                        <th>Team</th>
+                        <th>Opponent</th>
+                    </tr>
+                    <tr>
+                        <td>{singlePlayer.seasonYear}</td>
+                        <td>{singlePlayer.week}</td>
+                        <td>{singlePlayer.gameDate}</td>
+                        <td>
+                            <div>{singlePlayer.team}</div>
+                            <div><img src={singlePlayer.teamImage} alt={singlePlayer.team} /></div>
+                        </td>
+                        <td>
+                            <div>{singlePlayer.opponent}</div>
+                            <div><img src={singlePlayer.opponentImage} alt={singlePlayer.opponent} /></div>
+                        </td>
+                    </tr>
+                </table>
             </div>
-            <div>
+
+            <div className="single-athlete-pg-data">
                 <table>
                     <tr>
                         <th>Att</th>

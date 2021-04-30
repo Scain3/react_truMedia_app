@@ -59,3 +59,13 @@ body{
 .single-athlete__label{
     margin-right: 10px;
 }
+
+.single-athlete-pg-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.single-athlete-pg-description{
+    margin: 0 auto;
+}
