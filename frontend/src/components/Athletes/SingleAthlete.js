@@ -15,49 +15,42 @@ function SingleAthlete(){
 
     return(
         <div className="single-athlete-pg-div">
-            {/* <div className="single-athlete-side-header">
-                <div>{"ID"}</div>
-                <div>{"Full Name"}</div>
-                <div>{"Head Shot"}</div>
-                <div>{}</div>
-                <div>{}</div>
-                <div>{}</div>
-                <div>{}</div>
-                <div>{}</div>
-                <div>{}</div>
-                <div>{}</div>
-                <div>{}</div>
-                <div>{}</div>
-                <div>{}</div>
-                <div>{}</div>
-                <div>{}</div>
-                <div>{}</div>
-                <div>{}</div>
-                <div>{}</div>
-                <div>{}</div>
-            </div> */}
             <div>
-                <div><span className="single-athlete__label">{"ID"}</span>{singlePlayer.playerId}</div>
-                <div><span className="single-athlete__label">{"Player"}</span>{singlePlayer.fullName}</div>
-                <div><span className="single-athlete__label">{"Head Shot"}</span><img src={singlePlayer.playerImage} alt={singlePlayer.fullName} /></div>
-                <div><span className="single-athlete__label">{"Season Year"}</span>{singlePlayer.seasonYear}</div>
-                <div><span className="single-athlete__label">{"Week"}</span>{singlePlayer.week}</div>
-                <div><span className="single-athlete__label">{"Team"}</span>{singlePlayer.team}</div>
-                <div><span className="single-athlete__label">{"Team Image"}</span><img src={singlePlayer.teamImage} alt={singlePlayer.team} /></div>
-                <div>
-                    <div className="single-athlete__label">{"Opponent"}</div>
-                    <img src={singlePlayer.opponentImage} alt={singlePlayer.opponent} />
-                    {singlePlayer.opponent}</div>
-                {/* <div><img src={singlePlayer.opponentImage} alt={singlePlayer.opponent} /></div> */}
-                <div><div className="single-athlete__label">{"Att"}</div>{singlePlayer.Att}</div>
-                <div><div className="single-athlete__label">{"Cmp"}</div>{singlePlayer.Cmp}</div>
-                <div><div className="single-athlete__label">{"Sack"}</div>{singlePlayer.Sack}</div>
-                <div><div className="single-athlete__label">{"Int"}</div>{singlePlayer.Int}</div>
-                <div><div className="single-athlete__label">{"PsYds"}</div>{singlePlayer.PsYds}</div>
-                <div><div className="single-athlete__label">{"PsTd"}</div>{singlePlayer.PsTd}</div>
-                <div><div className="single-athlete__label">{"Rush"}</div>{singlePlayer.Rush}</div>
-                <div><div className="single-athlete__label">{"RshYds"}</div>{singlePlayer.RshYds}</div>
-                <div><div className="single-athlete__label">{"RshTD"}</div>{singlePlayer.RshTD}</div>
+                <h1>{singlePlayer.fullName}</h1>
+                <img src={singlePlayer.playerImage} alt={singlePlayer.fullName} />
+            </div>
+            <div>
+                <table>
+                    <tr>
+                        <th>Att</th>
+                        <th>Cmp</th>
+                        <th>Sack</th>
+                        <th>Int</th>
+                        <th>PsYds</th>
+                        <th>PsTd</th>
+                        <th>Rush</th>
+                        <th>RshYds</th>
+                        <th>RshTD</th>
+                        <th>Yds</th>
+                        <th>Yds/Att</th>
+                        <th>CMP%</th>
+                    </tr>
+                    <tr>
+                        <td>{singlePlayer.Att}</td>
+                        <td>{singlePlayer.Cmp}</td>
+                        <td>{singlePlayer.Sack}</td>
+                        <td>{singlePlayer.Int}</td>
+                        <td>{singlePlayer.PsYds}</td>
+                        <td>{singlePlayer.PsTD}</td>
+                        <td>{singlePlayer.Rush}</td>
+                        <td>{singlePlayer.RshYds}</td>
+                        <td>{singlePlayer.RshTD}</td>
+                        <td>{singlePlayer.RshYds + singlePlayer.PsYds}</td>
+                        <td>{Math.floor(((singlePlayer.RshYds + singlePlayer.PsYds) / singlePlayer.Att)* 10)/10}</td>
+                        <td>{Math.floor((singlePlayer.Cmp / singlePlayer.Att) * 100)}</td>
+
+                    </tr>
+                </table>
             </div>
         </div>
     )
