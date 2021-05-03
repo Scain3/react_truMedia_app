@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import {fetchOnePlayer} from '../../store/players';
 import './Athletes.css';
 
@@ -31,11 +31,9 @@ function SingleAthlete(){
                         <td>{singlePlayer.week}</td>
                         <td>{singlePlayer.gameDate}</td>
                         <td>
-                            {/* <div>{singlePlayer.team}</div> */}
                             <div><img src={singlePlayer.teamImage} alt={singlePlayer.team} /></div>
                         </td>
                         <td>
-                            {/* <div>{singlePlayer.opponent}</div> */}
                             <div><img src={singlePlayer.opponentImage} alt={singlePlayer.opponent} /></div>
                         </td>
                     </tr>

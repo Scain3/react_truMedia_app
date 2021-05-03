@@ -2,15 +2,15 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Navigation.css';
 
-function Navigation(){
+function Navigation({ isLoaded }){
 
 
   return (
-    <ul>
-      <li>
-        <NavLink exact to="/">TruMedia Networks</NavLink>
-      </li>
-    </ul>
+    <div>
+      <NavLink exact to="/athletes" className="home">TruMedia Networks</NavLink>
+      {isLoaded}
+    </div>
+
   );
 }
 

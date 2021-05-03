@@ -26,11 +26,11 @@ function App() {
           <Route path="/signup">
             <SignupFormPage />
           </Route>
-          <Route path="/athletes">
-            <Athletes />
-          </Route>
           <Route path="/player/:id">
             <SingleAthlete />
+          </Route>
+          <Route path="/">
+            <Athletes />
           </Route>
         </Switch>
       )}
