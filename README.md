@@ -31,7 +31,7 @@ In this application, I am utilizing the TruMedia Networks API to capture perform
    - "/api/athletes"
 
 
-   Fetches informationg pertaining to all of the NFL players
+   Fetches information pertaining to all of the NFL players
    
    - "/api/athletes/:id"
 
