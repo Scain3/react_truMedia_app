@@ -58,7 +58,6 @@ const athleteReducer = (state=initialState, action) => {
         case GET_PLAYERS:
            const allPlayers = {};
            action.payload.forEach((player) => {
-               console.log(player);
                allPlayers[player.playerId] = player
            })
            return allPlayers;
