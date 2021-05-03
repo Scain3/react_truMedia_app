@@ -64,23 +64,69 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-color: #FFFFFC;
 }
 
 .single-athlete__full-name{
     text-align: center;
+    font-size: 40px;
+    color:#173753;
+    background-color: #FFFFFC;
 }
 
 .single-athlete__photo-div{
-    margin: 0 auto;
+    margin: 0 auto 20px auto;
 }
 
 .single-athlete-pg-description{
-    margin: auto;
+    margin: 20px auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.single-athlete-pg-data{
-    margin: 0 auto;
+table{
+    border: 1px solid black
 }
+
+.single-athlete-description-header__row{
+    color: #8C271E;
+    font-size: 25px;
+
+}
+
+th .single-athlete-description__headers{
+    /* margin: 0 100px; */
+}
+
+.single-athlete-desctiprion-results_row{
+    font-size: 20px;
+}
+
+td .single-athlete-description__result{
+
+}
+
+.single-athlete-pg-data{
+    margin: 0px auto 20px auto;
+}
+
+.single-athlete-data-header{
+    color: #8C271E;
+    font-size: 25px;
+}
+
+/* Prussian Blue
+#173753
+
+Dodger Blue
+#1098F7
+
+Baby Powder
+#FFFFFC
+
+Burnt Umber
+#8C271E
+
+Indian red
+#D05353 */

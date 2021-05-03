@@ -19,21 +19,21 @@ function SingleAthlete(){
                 <h1 className="single-athlete__full-name">{singlePlayer.fullName}</h1>
                 <div className="single-athlete__photo-div"><img src={singlePlayer.playerImage} alt={singlePlayer.fullName} /></div>
                 <table>
-                    <tr>
-                        <th>Season Year</th>
-                        <th>Week</th>
-                        <th>Game Date</th>
-                        <th>Team</th>
-                        <th>Opponent</th>
+                    <tr className="single-athlete-description-header__row">
+                        <th className="single-athlete-description__headers">Season Year</th>
+                        <th className="single-athlete-description__headers">Week</th>
+                        <th className="single-athlete-description__headers">Game Date</th>
+                        <th className="single-athlete-description__headers">Team</th>
+                        <th className="single-athlete-description__headers">Opponent</th>
                     </tr>
-                    <tr>
-                        <td>{singlePlayer.seasonYear}</td>
-                        <td>{singlePlayer.week}</td>
-                        <td>{singlePlayer.gameDate}</td>
-                        <td>
+                    <tr className="single-athete-description-results__row">
+                        <td className="single-athlete-description__result">{singlePlayer.seasonYear}</td>
+                        <td className="single-athlete-description__result">{singlePlayer.week}</td>
+                        <td className="single-athlete-description__result">{singlePlayer.gameDate}</td>
+                        <td className="single-athlete-description__result">
                             <div><img src={singlePlayer.teamImage} alt={singlePlayer.team} /></div>
                         </td>
-                        <td>
+                        <td className="single-athlete-description__result">
                             <div><img src={singlePlayer.opponentImage} alt={singlePlayer.opponent} /></div>
                         </td>
                     </tr>
@@ -42,7 +42,7 @@ function SingleAthlete(){
 
             <div className="single-athlete-pg-data">
                 <table>
-                    <tr>
+                    <tr className="single-athlete-data-header">
                         <th>Att</th>
                         <th>Cmp</th>
                         <th>Sack</th>
