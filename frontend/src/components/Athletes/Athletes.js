@@ -17,7 +17,7 @@ function Athletes(){
     return(
         <div className="all-athletes-pg-div">
             <div className="headers">
-                <div className="header-divs header-head__shot">{"Head Shot"}</div>
+                <div className="header-divs header-head__shot">{"Player"}</div>
                 <div className="header-divs header-full__name">{"Full Name"}</div>
                 <div className="header-divs header-id">{"ID"}</div>
                 <div className="header-divs header-team">{"Team"}</div>
